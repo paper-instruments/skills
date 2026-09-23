@@ -1,0 +1,14 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "paper-office",
+  "version": "0.2.0",
+  "description": "Paper Instruments skills for preserving and editing Excel, Word, and PowerPoint files.",
+  "author": {
+    "name": "Paper Instruments",
+    "url": "https://github.com/paper-instruments"
+  },
+  "homepage": "https://github.com/paper-instruments/skills",
+  "repository": "https://github.com/paper-instruments/skills",
+  "license": "MIT",
+  "keywords": ["xlsx", "docx", "pptx", "office"]
+}

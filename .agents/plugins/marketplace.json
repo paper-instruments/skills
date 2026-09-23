@@ -1,0 +1,20 @@
+{
+  "name": "paper-skills",
+  "interface": {
+    "displayName": "Paper Skills"
+  },
+  "plugins": [
+    {
+      "name": "paper-office",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

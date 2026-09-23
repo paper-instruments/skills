@@ -1,0 +1,15 @@
+{
+  "name": "paper-skills",
+  "description": "Paper Instruments skills for Office documents.",
+  "owner": {
+    "name": "Paper Instruments",
+    "url": "https://github.com/paper-instruments"
+  },
+  "plugins": [
+    {
+      "name": "paper-office",
+      "source": "./",
+      "description": "Work with Excel, Word, and PowerPoint files using Paper Instruments packages."
+    }
+  ]
+}
