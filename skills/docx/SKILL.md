@@ -15,9 +15,25 @@ document = Document(source_path)
 
 Use your existing knowledge of `python-docx` for normal paragraphs, runs, styles, tables, sections, pictures, headers, and footers. The fork adds public APIs where ordinary `python-docx` is weak: finding text across fragmented runs and document stories, editing revisions and review structures, targeting bookmarks/fields/content controls, composing documents, inspecting package changes, and refusing operations it cannot perform safely.
 
-`paper-docx` is installed under the `docx` import.
+`paper-docx` provides the `docx` import.
 
 The [Paper API companion](references/paper-api.md) maps Paper-specific capabilities to their public symbols. The [generated API reference](references/api/index.md) covers the complete public API, including the surface inherited from `python-docx`, with one page per module. It is large; search by symbol and read only the relevant section.
+
+## Install the Python package
+
+Check for `paper-docx` with `python -m pip show paper-docx`. If missing, use an [activated virtual environment](https://docs.python.org/3/library/venv.html) and follow the [package README](https://github.com/paper-instruments/paper-docx#installation) install commands:
+
+```bash
+python -m pip uninstall -y python-docx paper-docx
+python -m pip install paper-docx
+python -m paper_docx_doctor
+```
+
+Use the same `python` for checks, installation, and scripts; activate the venv in the agent's shell.
+
+`python-docx` and `paper-docx` both provide the `docx` import. Do not install them together.
+
+Run `python -m paper_docx_doctor` again if imports fail or the environment changes.
 
 ## Package behavior
 
