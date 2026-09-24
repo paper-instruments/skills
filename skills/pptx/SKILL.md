@@ -15,9 +15,25 @@ presentation = Presentation(source_path)
 
 Use your existing knowledge of `python-pptx` for normal slides, shapes, text, tables, charts, images, layouts, and formatting. The fork adds public APIs for the places where ordinary `python-pptx` is thin: effective-value inspection, stable targeting, notes and footer handling, slide lifecycle, relationship-aware clone/import/composition, owned chart and media graphs, semantic diffs, and package-preserving saves.
 
-`paper-pptx` is installed under the `pptx` import.
+`paper-pptx` provides the `pptx` import.
 
 The [Paper API companion](references/paper-api.md) maps Paper-specific capabilities to their public symbols. The [generated API reference](references/api/index.md) covers the complete public API, including the surface inherited from `python-pptx`, with one page per module. It is large; search by symbol and read only the relevant section.
+
+## Install the Python package
+
+Check for `paper-pptx` with `python -m pip show paper-pptx`. If missing, use an [activated virtual environment](https://docs.python.org/3/library/venv.html) and follow the [package README](https://github.com/paper-instruments/paper-pptx#installation) install commands:
+
+```bash
+python -m pip uninstall -y python-pptx paper-pptx
+python -m pip install paper-pptx
+python -m paper_pptx_doctor
+```
+
+Use the same `python` for checks, installation, and scripts; activate the venv in the agent's shell.
+
+`python-pptx` and `paper-pptx` both provide the `pptx` import. Do not install them together.
+
+Run `python -m paper_pptx_doctor` again if imports fail or the environment changes.
 
 ## Package behavior
 

@@ -15,9 +15,25 @@ workbook = load_workbook(source_path)
 
 Use your existing knowledge of `openpyxl` for worksheets, cells, formulas, styles, tables, charts, images, names, validation, and protection. The fork adds preservation-aware package handling, targeted search and inspection, guarded structural operations with address remapping, narrow table and image mutations, recalculation and cached-value helpers, semantic validation/diffs, and edit receipts.
 
-`paper-xlsx` is installed under the `openpyxl` import.
+`paper-xlsx` provides the `openpyxl` import.
 
 The [Paper API companion](references/paper-api.md) maps Paper-specific capabilities to their public symbols. The [generated API reference](references/api/index.md) covers the complete public API, including the surface inherited from `openpyxl`, with one page per module. It is large; search by symbol and read only the relevant section.
+
+## Install the Python package
+
+Check for `paper-xlsx` with `python -m pip show paper-xlsx`. If missing, use an [activated virtual environment](https://docs.python.org/3/library/venv.html) and follow the [package README](https://github.com/paper-instruments/paper-xlsx#installation) install commands:
+
+```bash
+python -m pip uninstall -y openpyxl paper-xlsx
+python -m pip install paper-xlsx
+python -m paper_xlsx_doctor
+```
+
+Use the same `python` for checks, installation, and scripts; activate the venv in the agent's shell.
+
+`openpyxl` and `paper-xlsx` both provide the `openpyxl` import. Do not install them together.
+
+Run `python -m paper_xlsx_doctor` again if imports fail or the environment changes.
 
 ## Package behavior
 
