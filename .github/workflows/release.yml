@@ -1,0 +1,40 @@
+name: Release
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.versions.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: versions
+        run: echo "version=$(python3 scripts/check_versions.py)" >> "$GITHUB_OUTPUT"
+
+  tag:
+    needs: check
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Tag and release a new plugin version
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: v${{ needs.check.outputs.version }}
+        run: |
+          if git rev-parse -q --verify "refs/tags/$TAG" >/dev/null; then
+            echo "$TAG already released"
+            exit 0
+          fi
+          gh release create "$TAG" --target "$GITHUB_SHA" --title "$TAG" --generate-notes
