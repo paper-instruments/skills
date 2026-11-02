@@ -1,6 +1,10 @@
 ---
 name: xlsx
 description: Work with Excel `.xlsx` and `.xlsm` files using the installed `paper-xlsx` distribution, which imports as `openpyxl` and extends it with preservation-aware saves, guarded structural edits, recalculation helpers, diffs, and richer inspection.
+compatibility: Written for paper-xlsx 0.2.1, installed separately in the working Python environment.
+metadata:
+  version: "0.2.1"
+  package: paper-xlsx
 ---
 
 # XLSX with paper-xlsx

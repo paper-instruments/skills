@@ -42,6 +42,27 @@ npx skills add paper-instruments/skills --skill '*' -a claude-code -a codex -g
 
 `-g` installs for the user across projects; omit it to install in the current project. To select only one skill, replace `--skill '*'` with `--skill xlsx`, `--skill docx`, or `--skill pptx`.
 
+## Versions
+
+Each skill states the package release it documents in its `SKILL.md` frontmatter, as `metadata.version`, matching the version its generated API reference was built from:
+
+```yaml
+compatibility: Written for paper-docx 0.2.0, installed separately in the working Python environment.
+metadata:
+  version: "0.2.0"
+  package: paper-docx
+```
+
+A skill's version moves when its references are regenerated for a new package release. The repository's version in `plugin.json` moves whenever any skill changes, and each new version is tagged `v<version>` with a GitHub release. `scripts/check_versions.py` checks that these agree and runs on every pull request.
+
+To install a released version instead of `main`, name the tag:
+
+```bash
+npx skills add https://github.com/paper-instruments/skills/tree/v0.2.0/skills/docx
+```
+
+A tool that installs skills at build time can also take the latest `main` and require a minimum by reading `metadata.version`, for example `docx >=0.2.0`, so it keeps up with new releases without a pinned copy.
+
 ## Install the Python packages separately
 
 Installing these skills **does not install the Python distributions**. The skills assume the corresponding Paper distributions are already available in the working Python environment. Follow each package's README for its installation and environment checks before using the skill. The Paper distributions share import names with their upstream packages, so do not install a Paper distribution alongside the upstream distribution that owns the same import tree.

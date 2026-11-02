@@ -1,6 +1,10 @@
 ---
 name: docx
 description: Work with Microsoft Word `.docx` files using the installed `paper-docx` distribution, which imports as `docx` and extends `python-docx` with inspection, guarded edits, review structures, composition, diffs, and byte-preserving saves.
+compatibility: Written for paper-docx 0.2.0, installed separately in the working Python environment.
+metadata:
+  version: "0.2.0"
+  package: paper-docx
 ---
 
 # DOCX with paper-docx
